@@ -1239,3 +1239,26 @@ section{
         text-align: center;
     }
 }
+/* ---------------------------------------------------------
+   FLIP CARD — mobile fix: force backface-visibility on every
+   layer of the front face, not just the parent, since some
+   mobile browsers don't propagate it to children reliably.
+   --------------------------------------------------------- */
+.flip-card__face,
+.flip-card__face--front img,
+.flip-card__front-label,
+.flip-card__hint{
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flip-card__face--front::after{
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+@media (max-width: 700px){
+    .flip-card.is-flipped .flip-card__face--front{
+        visibility: hidden;
+    }
+}

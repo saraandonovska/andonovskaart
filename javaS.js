@@ -176,7 +176,7 @@ if (contactForm) {
             "template_7rmwo1l",
             this
         )
-            .then(() => {
+            .then(() => {git
 
                 status.textContent = "Message sent successfully ✓";
                 status.style.color = "#4CAF50";

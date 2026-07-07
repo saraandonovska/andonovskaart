@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impulse — Full Exhibition · Sara</title>
+    <meta name="description" content="Impulse — Sara's first solo exhibition. Ten works, in full, with notes on each piece.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg class="thread" id="thread" viewBox="0 0 2 3000" preserveAspectRatio="none" aria-hidden="true">
+    <path id="threadPath" d="M1,0 C1,300 1,300 1,600 C1,900 1,900 1,1200 C1,1500 1,1500 1,1800 C1,2100 1,2100 1,2400 C1,2700 1,2700 1,3000" />
+</svg>
+
+<!-- ===== Nav =====
+     Same drawer component as index.html. Links point back to the
+     section anchors on the home page since this is a sub-page. ===== -->
+<header class="nav" id="nav">
+    <a class="nav__mark" href="html.html">Sara<span class="dot">.</span></a>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="navLinks">
+        <span class="nav__links-label">Menu</span>
+        <a href="html.html"><span>01</span>Home</a>
+        <a href="html.html#about"><span>02</span>About</a>
+        <a href="html.html#exhibition"><span>03</span>Exhibition</a>
+        <a href="html.html#honors"><span>04</span>Honors</a>
+        <a href="html.html#contact"><span>05</span>Contact</a>
+
+        <div class="nav__social">
+            <a href="https://www.instagram.com/andonovskaart?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="5"/>
+                    <circle cx="12" cy="12" r="4.2"/>
+                    <circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/sara-andonovska-444166329" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="5"/>
+                    <circle cx="7.7" cy="6.8" r="0.9" fill="currentColor" stroke="none"/>
+                    <line x1="7.7" y1="10" x2="7.7" y2="17"/>
+                    <line x1="11.3" y1="10" x2="11.3" y2="17"/>
+                    <path d="M11.3 13.3c0-1.6.9-2.7 2.4-2.7s2.3 1.1 2.3 2.7V17"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+</header>
+<div class="nav__backdrop" id="navBackdrop"></div>
+
+<main>
+
+    <!-- ===== Mini hero ===== -->
+    <section class="exhibit-hero">
+        <a class="exhibit-back-link" href="html.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="11 18 5 12 11 6"/></svg>
+            Back to portfolio
+        </a>
+        <p class="eyebrow">Solo exhibition - 2026</p>
+        <h1 class="exhibit-hero__title">All Ten <em>Works</em>,<br>In Full</h1>
+        <p class="exhibit-hero__lede">
+            a collection born from years of inner growth, emotion, and self-discovery.
+            Each artwork captures the moment when feelings become form, transforming
+            silence into color, texture, and movement.
+        </p>
+        <p class="exhibit-hero__lede">For me, art is not about providing
+            answers but creating space for reflection - a dialogue between the self and the world.
+            Impuls represents that quiet yet powerful instant when something deeply felt demands to
+            be seen, inviting viewers to connect with their own emotions and interpretations.
+        </p>
+        <div class="exhibit-hero__meta">
+            <div class="hero__meta-item">
+                <span class="label"; style="color: #C82127">Title</span>
+                <span>Impuls</span>
+            </div>
+            <div class="hero__meta-item">
+                <span class="label"; style="color: #C82127">Works</span>
+                <span>10 pieces, 2023–2026</span>
+            </div>
+            <div class="hero__meta-item">
+                <span class="label"; style="color: #C82127">Medium</span>
+                <span>Acrylic, choarcoal, mixed media</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Gallery grid — flip cards ===== -->
+    <section class="exhibition" id="gallery">
+        <div class="section-head">
+            <span class="section-num">01</span>
+            <h2>The Gallery</h2>
+        </div>
+        <p class="section-intro">
+            Tap or click a piece to flip it - the back holds a short note on what it means.
+        </p>
+
+        <div class="exhibit-grid">
+
+            <!-- Repeat this block for each piece. Swap image src, title,
+                 medium/year, and the reflection text on the back face. -->
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip to read about Искра меѓу нас">
+                <div class="flip-card__inner">
+                    <div class="flip-card__face flip-card__face--front">
+                        <img src="images/1.jpg" alt="Искра меѓу нас, artwork 01">
+                        <span class="flip-card__hint">Tap to read</span>
+                        <div class="flip-card__front-label">
+
+                            <h3>Искра меѓу нас</h3>
+                            <p>Mixed media, 2026</p>
+                        </div>
+                    </div>
+                    <div class="flip-card__face flip-card__face--back">
+                        <span class="flip-card__back-label">What it means</span>
+                        <p class="flip-card__back-text"> From the smoke, a love is born that settles within her mind.
+                            The smoke becomes a bridge between thought and heart, where dreams and reality dissolve into one another.
+                            Their silhouettes remain fragile and fleeting, like a feeling that exists only between a breath and its disappearance.</p>
+                        <div class="flip-card__back-foot"><span>45x65cm</span><span>Mixed media, 2026</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip to read about Капка бисер">
+                <div class="flip-card__inner">
+                    <div class="flip-card__face flip-card__face--front">
+                        <img src="images/2.jpg" alt="Капка бисер, artwork 02">
+                        <span class="flip-card__hint">Tap to read</span>
+                        <div class="flip-card__front-label">
+
+                            <h3>Капка бисер</h3>
+                            <p>Mixed media, 2026</p>
+                        </div>
+                    </div>
+                    <div class="flip-card__face flip-card__face--back">
+                        <span class="flip-card__back-label">What it means</span>
+                        <p class="flip-card__back-text">Rather than a sign of weakness, tears become an ornament - a
+                            symbol of resilience and endurance. From our most fragile moments, something precious a
+                            nd lasting is born. Hidden emotions transform the soul into a reflection of timeless beauty and love.</p>
+                        <div class="flip-card__back-foot"><span>45x65cm</span><span>Mixed media, 2026</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip to read about Шепот">
+                <div class="flip-card__inner">
+                    <div class="flip-card__face flip-card__face--front">
+                        <img src="images/3.jpg" alt="Шепот, artwork 03">
+                        <span class="flip-card__hint">Tap to read</span>
+                        <div class="flip-card__front-label">
+
+                            <h3>Шепот</h3>
+                            <p>Mixed media, 2026</p>
+                        </div>
+                    </div>
+                    <div class="flip-card__face flip-card__face--back">
+                        <span class="flip-card__back-label">What it means</span>
+                        <p class="flip-card__back-text">Sometimes the most important truths are not seen but
+                            heard from within. Attention, tenderness, and quiet reflection can create a place of
+                            peace and light in the most intimate corners of ourselves.</p>
+                        <div class="flip-card__back-foot"><span>50x60cm</span><span>Mixed media, 2026</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip to read about Двоен пулс">
+                <div class="flip-card__inner">
+                    <div class="flip-card__face flip-card__face--front">
+                        <img src="images/4.jpg" alt="Двоен пулс, artwork 04">
+                        <span class="flip-card__hint">Tap to read</span>
+                        <div class="flip-card__front-label">
+
+                            <h3>Двоен пулс</h3>
+                            <p>Acrylic on canvas, 2026</p>
+                        </div>
+                    </div>
+                    <div class="flip-card__face flip-card__face--back">
+                        <span class="flip-card__back-label">What it means</span>
+                        <p class="flip-card__back-text">An eternal inner dialogue between reason and the heart.
+                            Their intertwining reveals that it is the tension between opposites that shapes who we are.
+                            One gaze is turned toward the world, the other inward - a portrait of the human condition.</p>
+                        <div class="flip-card__back-foot"><span>45x65cm</span><span>Acrylic, 2026</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip to read about Допир">
+                <div class="flip-card__inner">
+                    <div class="flip-card__face flip-card__face--front">
+                        <img src="images/5.jpg" alt="Допир, artwork 05">
+                        <span class="flip-card__hint">Tap to read</span>
+                        <div class="flip-card__front-label">
+
+                            <h3>Допир</h3>
+                            <p>Acrylic on canvas, 2025</p>
+                        </div>
+                    </div>
+                    <div class="flip-card__face flip-card__face--back">
+                        <span class="flip-card__back-label">What it means</span>
+                        <p class="flip-card__back-text">In the moment when two fingertips almost meet,
+                            a light is born, reminding us that true connection does not require perfection - it
+                            only asks for the courage to come closer. Touch is more than contact; it is a passage from darkness into a shared light.</p>
+                        <div class="flip-card__back-foot"><span>30x40cm</span><span>Acrylic, 2025</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip to read about Кажи ми">
+                <div class="flip-card__inner">
+                    <div class="flip-card__face flip-card__face--front">
+                        <img src="images/6.jpg" alt="Кажи ми, artwork 06">
+                        <span class="flip-card__hint">Tap to read</span>
+                        <div class="flip-card__front-label">
+
+                            <h3>Кажи ми</h3>
+                            <p>Mixed media, 2024</p>
+                        </div>
+                    </div>
+                    <div class="flip-card__face flip-card__face--back">
+                        <span class="flip-card__back-label">What it means</span>
+                        <p class="flip-card__back-text">Strength and power already exist within me, and only I can set
+                            myself free. I must undergo a spiritual transformation, reconnect with myself, and awaken
+                            from within. Carrying the torch of awakening is not easy. It begins with learning to
+                            love myself, to feel alive again, and to see my own reflection through new eyes.</p>
+                        <div class="flip-card__back-foot"><span>40x50cm</span><span>Mixed media, 2024</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip to read about ТИ">
+                <div class="flip-card__inner">
+                    <div class="flip-card__face flip-card__face--front">
+                        <img src="images/edited.jpeg" alt="ТИ, artwork 07">
+                        <span class="flip-card__hint">Tap to read</span>
+                        <div class="flip-card__front-label">
+
+                            <h3>ТИ</h3>
+                            <p>Mixed media, 2026</p>
+                        </div>
+                    </div>
+                    <div class="flip-card__face flip-card__face--back">
+                        <span class="flip-card__back-label">What it means</span>
+                        <p class="flip-card__back-text">The mirror reveals what words cannot. The face whispers
+                            while the reflection speaks, exposing both what the world longs to see and what
+                            exists beneath the surface. It is where the inner and outer selves finally meet.</p>
+                        <div class="flip-card__back-foot"><span>50x60cm</span><span>Mixed media, 2026</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip to read about Вдахнување">
+                <div class="flip-card__inner">
+                    <div class="flip-card__face flip-card__face--front">
+                        <img src="images/8.jpg" alt="Вдахнување, artwork 08">
+                        <span class="flip-card__hint">Tap to read</span>
+                        <div class="flip-card__front-label">
+
+                            <h3>Вдахнување</h3>
+                            <p>Mixed media, 2024</p>
+                        </div>
+                    </div>
+                    <div class="flip-card__face flip-card__face--back">
+                        <span class="flip-card__back-label">What it means</span>
+                        <p class="flip-card__back-text">In our constant pursuit of something better,
+                            we often forget our health. It is only when we face serious illness that
+                            we begin to see technology as hope. The progress of modern medicine offers us
+                            a second chance at life. Through innovation, we are given the opportunity to breathe once more - the breath of a new morning.</p>
+                        <div class="flip-card__back-foot"><span>30x40cm</span><span>Mixed media, 2024</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip to read about Вресок">
+                <div class="flip-card__inner">
+                    <div class="flip-card__face flip-card__face--front">
+                        <img src="images/9.jpg" alt="Вресок, artwork 09">
+                        <span class="flip-card__hint">Tap to read</span>
+                        <div class="flip-card__front-label">
+
+                            <h3>Вресок</h3>
+                            <p>Mixed media, 2023</p>
+                        </div>
+                    </div>
+                    <div class="flip-card__face flip-card__face--back">
+                        <span class="flip-card__back-label">What it means</span>
+                        <p class="flip-card__back-text">A silence that erupts from within—a scream that cannot be heard,
+                            yet can be deeply felt. The face struggles to contain the cry burning beneath the skin,
+                            capturing the moment when the heart is screaming but the voice remains silent. It reflects
+                            the frustration and sorrow we carry inside, unseen and unheard by the world.</p>
+                        <div class="flip-card__back-foot"><span>30x40cm</span><span>Mixed media, 2023</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip to read about 11:11">
+                <div class="flip-card__inner">
+                    <div class="flip-card__face flip-card__face--front">
+                        <img src="images/10.jpg" alt="11:11, artwork 10">
+                        <span class="flip-card__hint">Tap to read</span>
+                        <div class="flip-card__front-label">
+                            <h3>11:11</h3>
+                            <p>Mixed media, 2026</p>
+                        </div>
+                    </div>
+                    <div class="flip-card__face flip-card__face--back">
+                        <span class="flip-card__back-label">What it means</span>
+                        <p class="flip-card__back-text">A moment when the universe aligns with the longing for
+                            two souls destined to meet. A delicate red thread illuminates the darkness, connecting
+                            two silhouettes - an invisible force guiding them toward one another. It is the point where time and destiny briefly touch.</p>
+                        <div class="flip-card__back-foot"><span>Diptych- 2 x 40x50cm</span><span>Mixed media, 2026</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== Press & Interviews =====
+         Replace href="#" with the real links, and swap the placeholder
+         titles/outlets for the actual pieces once you have them. -->
+    <section class="press" id="press">
+        <div class="section-head">
+            <span class="section-num">02</span>
+            <h2>In Conversation</h2>
+        </div>
+        <p class="section-intro">
+            Interviews, features, and write-ups on the exhibition and the work behind it.
+        </p>
+
+        <div class="press-list">
+            <a class="press-item" href="https://www.vecer.press/sekoe-delo-na-sara-andonovska-e-prozorecz-kon-nejziniot-vnatreshen-svet-uspeshna-izlozhba-na-mladata-umetnicza-vo-czentar-jadro/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnCoxAI05WPVoegtQAMzaS3goFVz3Hcf9nPzeQGTg8v0ZPgBpFDFj_v-F-3RY_aem_PIGqklRn3CHRQ4-HrPTF9Q" target="_blank" rel="noopener">
+                <span class="press-kind">link to the Interview</span>
+                <div>
+                    <h3>Every Artwork Is a Window Into My Inner World</h3>
+                    <span class="outlet">Vecer Press — March 2026</span>
+                </div>
+                <svg class="press-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+
+            <a class="press-item" href="https://centarjadro.mk/en/event/impulse-solo-exhibition-by-sara-andonovska/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnG4PfUZV_mCI2L4k6hw2eD9rRVJhVqwv_XEo0d0m2b-66l27vMWNG3m2XSs0_aem_EVMGKyW1uy1lDd-cupeDUw" target="_blank" rel="noopener">
+                <span class="press-kind">link to the event</span>
+                <div>
+                    <h3>Impulse - Solo Exhibition at Cultural & Social Space Centar Jadro</h3>
+                    <span class="outlet">Centar Jadro - March 2026</span>
+                </div>
+                <svg class="press-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+
+            <a class="press-item" href="https://smart.sdk.mk/vesti/studentkata-sara-andonovska-se-pretstavi-so-prvata-samostojna-izlozhba-vo-skopje/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGncXi4W5b-oyYGUT54RLPXkVNK2S57xfExBxHQumk6T05BGlDCJRleWOhkHfI_aem_qXyFj-iZC2HzJXslmcy7Dw" target="_blank" rel="noopener">
+                <span class="press-kind">link to the Interview</span>
+                <div>
+                    <h3>Student & Artist Sara Andonovska Presents Her First Solo Exhibition</h3>
+                    <span class="outlet">SMART SDK - March 2026</span>
+                </div>
+                <svg class="press-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+
+            <a class="press-item" href="https://republika.mk/vesti/kultura/impuls-samostojna-izlozhba-na-sara-andonovska-vecherva-vo-ksp-czentar-jadro/" target="_blank" rel="noopener">
+                <span class="press-kind">link to the Interview</span>
+                <div>
+                    <h3>Impuls - Solo Exhibition Opening at Centar Jadro</h3>
+                    <span class="outlet">Republika - March 2026</span>
+                </div>
+                <svg class="press-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+
+            <a class="press-item" href="https://skala.edu.mk/studentski-iskustva-akademija-za-ux-ui-dizajn-sara-andonovska/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnJjrTvgwY0n8QUNtfRaPtUlvrBAqfZVBdjf4DdB8e5TmTQau6AFoqeBQJCqI_aem_GlHMy5BoBsJUQhuLQQnU_g" target="_blank" rel="noopener">
+                <span class="press-kind">link to the Interview</span>
+                <div>
+                    <h3>From UX/UI Design to Fine Art - My Creative Journey</h3>
+                    <span class="outlet">Skala Academy - March 2026</span>
+                </div>
+                <svg class="press-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- ===== Back to the rest of the site ===== -->
+    <section class="contact" id="contact-lite">
+        <div class="contact__inner" style="grid-template-columns: 1fr;">
+            <div class="contact__left">
+                <p class="eyebrow">Want to know more?</p>
+                <h2 class="contact__title">Back to the<br><em>rest of the site.</em></h2>
+                <div class="contact__social" style="margin-top: 36px; border-top: none; padding-top: 0;">
+                    <a class="btn btn--light" href="html.html#about">About</a>
+                    <a class="btn btn--light" href="html.html#honors">Honors</a>
+                    <a class="btn btn--light" href="html.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <span>Sara Andonovska © 2026</span>
+    <span> @andonovskaart // andonovskaart@gmail.com </span>
+</footer>
+
+<script src="javaS.js"></script>
+</body>
+</html>>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara — Portfolio</title>
+    <meta name="description" content="Sara — visual artist. Exhibitions, honors, and contact.">
+
+    <!-- Google Fonts: Fraunces (display/serif) + Inter (body) + IBM Plex Mono (labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<body>
+
+<!-- ===== Thread signature line — runs behind the whole page, echoes the
+     red-thread motif in Sara's own work. Drawn in on scroll. ===== -->
+<svg class="thread" id="thread" viewBox="0 0 2 3000" preserveAspectRatio="none" aria-hidden="true">
+    <path id="threadPath" d="M1,0 C1,300 1,300 1,600 C1,900 1,900 1,1200 C1,1500 1,1500 1,1800 C1,2100 1,2100 1,2400 C1,2700 1,2700 1,3000" />
+</svg>
+
+<!-- ===== Nav =====
+     Desktop: plain horizontal bar (unchanged).
+     Mobile: the same links become a full-height side drawer that slides
+     in from the right, with a dimmed backdrop behind it. ===== -->
+<header class="nav" id="nav">
+    <a class="nav__mark" href="#home">Sara<span class="dot">.</span></a>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="navLinks">
+        <span class="nav__links-label">Menu</span>
+        <a href="#home"><span>01</span>Home</a>
+        <a href="#about"><span>02</span>About</a>
+        <a href="#exhibition"><span>03</span>Exhibition</a>
+        <a href="#honors"><span>04</span>Honors</a>
+        <a href="#contact"><span>05</span>Contact</a>
+
+        <div class="nav__social">
+            <a href="https://www.instagram.com/andonovskaart?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="5"/>
+                    <circle cx="12" cy="12" r="4.2"/>
+                    <circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/sara-andonovska-444166329" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="5"/>
+                    <circle cx="7.7" cy="6.8" r="0.9" fill="currentColor" stroke="none"/>
+                    <line x1="7.7" y1="10" x2="7.7" y2="17"/>
+                    <line x1="11.3" y1="10" x2="11.3" y2="17"/>
+                    <path d="M11.3 13.3c0-1.6.9-2.7 2.4-2.7s2.3 1.1 2.3 2.7V17"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+</header>
+<div class="nav__backdrop" id="navBackdrop"></div>
+
+<main>
+
+    <!-- ===== Home / Hero =====
+         Editorial sandwich: intro text top, a full-bleed strip of work,
+         headline resolving underneath. Replace the six strip images with
+         real crops from your pieces — square or portrait works best. ===== -->
+    <section class="hero" id="home">
+
+        <div class="hero__top">
+            <p class="eyebrow">Visual artist — Skopje, North Macedonia</p>
+            <p class="hero__intro">
+                Painting became the language I found before I learned
+                how to explain my emotions. <br>
+                <br>
+                 I work with acrylic, charcoal and mixed media to translate
+                memories, emotions and human connection into visual form.
+                Every piece is an invitation to pause, observe and feel.
+            </p>
+            <div class="hero__headline">
+                <div class="hero__signature">
+                    <img src="images/signature.svg" alt="Sara signature">
+                </div>
+                <h1 class="hero__line hero__line--top">Sara<br><em>Andonovska</em><br></h1>
+            </div>
+        </div>
+
+        <div class="hero__strip" aria-label="A selection of Sara's work">
+            <div class="hero__strip-item"><img src="images/1.jpg" alt="Artwork detail 01"></div>
+            <div class="hero__strip-item"><img src="images/3.jpg" alt="Artwork detail 02"></div>
+            <div class="hero__strip-item"><img src="images/2.jpg" alt="Artwork detail 03"></div>
+            <div class="hero__strip-item"><img src="images/6.jpg" alt="Artwork detail 04"></div>
+            <div class="hero__strip-item"><img src="images/edited.jpeg" alt="Artwork detail 05"></div>
+            <div class="hero__strip-item"><img src="images/8.jpg" alt="Artwork detail 06"></div>
+        </div>
+
+        <div class="hero__bottom">
+            <!-- <h1 class="hero__line hero__line--bottom"><em>The Art of Becoming</em></h1>-->
+            <div class="hero__meta">
+                <div class="hero__meta-item">
+                    <span class="label"; style="color: #C82127">Medium</span>
+                    <span>Acrylic, ink, mixed media</span>
+                </div>
+                <div class="hero__meta-item">
+                    <span class="label"; style="color: #C82127">Debut</span>
+                    <span>Solo exhibition, 2026 - ,,Impuls''</span>
+                </div>
+                <div class="hero__meta-item">
+                    <span class="label"; style="color: #C82127">Currently</span>
+                    <span>Open for collaborations and orders</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="about" id="about">
+        <div class="section-head">
+            <span class="section-num">01</span>
+            <h2>About Me</h2>
+        </div>
+
+        <div class="about__grid">
+            <div class="about__portrait">
+                <div class="about__portrait-frame">
+                    <img src="images/img1.jpg" alt="Portrait of Sara in the studio">
+                </div>
+                <span class="about__caption">The artist behind the canvas, 2026</span>
+            </div>
+
+            <div class="about__text">
+                <p class="pull-quote">
+                    "Every brushstroke carries a piece of emotion that words could never express,
+                    speaking the language my <em>heart</em> cannot. "
+
+                </p>
+                <p>
+                    I'm <span style="color: #584BBF; font-weight: bold">Sara</span> - an artist at heart and a Computer Science and Engineering student at FINKI.
+                    While technology teaches me how things work, painting teaches me how they feel.
+                </p>
+                <p>
+                    Alongside my studies, I have followed my passion as a self-taught painter working mostly in acrylic and charcoal, drawn to
+                    experiment with mixed media and giving meanings to blank canvases. Since childhood, art has been my way of expressing emotions that words cannot fully describe.
+                </p>
+                <p>
+                    My journey through visual arts, UX/UI design, and web development has shown me that the most powerful ideas are born
+                    where logic meets emotion, creating pieces that invites people to pause,
+                    feel, and remember.
+                </p>
+                <div class="about__facts">
+                    <div><span class="label"  ; style="color: #C82127">Based in</span> Skopje </div>
+                    <div><span class="label" ; style="color: #C82127">Practice</span> Acrylic · Charcoal · Mixed media</div>
+                    <div><span class="label"  ; style="color: #C82127">Started</span> 2019</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Exhibition =====
+         Kept short on purpose: the event, a feel of the room, and a door
+         out to the full gallery. The complete 10-piece grid — with
+         flip-to-read cards and the press/interviews list — now lives on
+         exhibition.html so this page stays a quick, editorial read. ===== -->
+    <section class="exhibition" id="exhibition">
+        <div class="section-head">
+            <span class="section-num">02</span>
+            <h2>Exhibition</h2>
+        </div>
+
+        <div class="exhibition__intro">
+            <p class="section-intro">
+                <strong>"Impuls"</strong> — my first solo exhibition, held 3rd-9th March 2026 in Skopje.
+            </p>
+            <p class="exhibition__body">
+                Collection of 10 works created from moments when emotion overcomes routine and inner truth begins to surface.
+                The exhibition explores the quiet yet powerful instant when feelings become impossible to ignore,
+                transforming into color, texture, and form.
+            </p>
+        </div>
+
+        <!-- Atmosphere strip: 3 placeholder shots from the opening / the room.
+             Swap the src attributes for real photos — portrait crops work
+             best for the two tall slots, landscape for the middle one. -->
+        <div class="atmosphere">
+            <figure class="atmosphere__item" data-reveal="left">
+                <img src="images/1izl.jpg" alt="Exhibition opening night, gallery view">
+                <figcaption>The room</figcaption>
+            </figure>
+            <figure class="atmosphere__item" data-reveal="up">
+                <img src="images/2izl.jpg" alt="Visitors reading the wall text beside a painting">
+                <figcaption>The art</figcaption>
+            </figure>
+            <figure class="atmosphere__item" data-reveal="up">
+                <img src="images/3izl.jpg" alt="Close-up detail from the exhibition">
+                <figcaption>Details</figcaption>
+            </figure>
+            <figure class="atmosphere__item" data-reveal="right">
+                <img src="images/5izl.jpg" alt="Wide view of the gallery room">
+                <figcaption>Opening night</figcaption>
+            </figure>
+        </div>
+
+        <div class="exhibition__cta" data-reveal="up">
+            <a class="btn" href="exhibition.html">
+                <span>View the full exhibition</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== Honors & Awards ===== -->
+    <section class="honors" id="honors">
+        <div class="section-head">
+            <span class="section-num">03</span>
+            <h2>Honors &amp; Awards</h2>
+        </div>
+
+        <ul class="honors-list">
+            <li>
+                <span class="honors-year">2024</span>
+                <div>
+                    <h3>1st Place, Best Startup — Seavus Competition</h3>
+                    <p>National recognition for iThermo, a thermoelectric device concept, developed with InnoPazzio.</p>
+                </div>
+            </li>
+            <li>
+                <span class="honors-year">2023–24</span>
+                <div>
+                    <h3>UX/UI+ Design Academy</h3>
+                    <p>Developing strong skills in Figma, Adobe Illustrator, and Adobe Photoshop, mastering user-centered design, wireframing, prototyping, visual design, and creating intuitive digital experiences.</p>
+                </div>
+            </li>
+            <li>
+                <span class="honors-year">2023</span>
+                <div>
+                    <h3>First Place Skala School award</h3>
+                    <p>Multiple placements across national student enterprise competitions.</p>
+                </div>
+            </li>
+            <li>
+                <span class="honors-year">2025</span>
+                <div>
+                    <h3>1st Place — Blockchain Skopje Hackathon (Base42)</h3>
+                    <p>Co-founder &amp; content lead for SafeChain MK, an anti-phishing platform built on Solana.</p>
+                </div>
+            </li>
+            <li>
+                <span class="honors-year">—</span>
+                <div>
+                    <h3>Cambridge FCE, B2 English Certificate</h3>
+                    <p>Formal English proficiency certification.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="contact" id="contact">
+        <div class="contact__inner">
+            <div class="contact__left">
+                <p class="eyebrow">Get in touch</p>
+                <h2 class="contact__title">Let's make<br><em>the walls feel alive.</em></h2>
+                <p class="contact__sub">Commissions, exhibitions, collaborations — open to all of it.</p>
+            </div>
+
+            <div class="contact__right">
+                <form class="contact__form" id="contactForm">
+                    <label>
+                        <span class="label">Name</span>
+                        <input type="text" name="from_name" required>
+                    </label>
+                    <label>
+                        <span class="label">Email</span>
+                        <input type="email" name="from_email" required>
+                    </label>
+                    <label>
+                        <span class="label">Message</span>
+                        <textarea name="message" rows="4" required></textarea>
+                    </label>
+                    <button type="submit">Send message</button>
+                    <p class="form-status"; style="font-family: var(--font-mono); font-size: 12px;"></p>
+                </form>
+
+                <div class="contact__social">
+                    <a href="https://www.instagram.com/andonovskaart?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Instagram ↗</a>
+                    <a href="https://www.linkedin.com/in/sara-andonovska-444166329" target="_blank" rel="noopener">LinkedIn ↗</a>
+                    <a href="mailto:andonovskaart@gmail.com">andonovskaart@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <span>Sara Andonovska © 2026</span>
+    <span> @andonovskaart // andonovskaart@gmail.com </span>
+</footer>
+
+<script src="javaS.js"></script>
+</body>
+</html>

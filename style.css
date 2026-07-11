@@ -623,14 +623,14 @@ section{
     /* row 1 — bigger image, right-aligned, note on its left */
     .hero-mobile__img--main{
         flex: 0 0 60%;
-        height: 34vh;
+        height: 34svh;
     }
 
     /* row 2 — smaller image, left-aligned, name on its right */
     .hero-mobile__img--small{
         margin-top: 14px;
         flex: 0 0 60%;
-        height: 19vh;
+        height: 19svh;
     }
     .hero-mobile__sign-name{
         flex: 0 0 20%;
@@ -1428,4 +1428,8 @@ section{
     display:block;
     font-size:11px;
     line-height:1.35;
+}
+
+.hero-mobile__img{
+    flex-shrink: 0;
 }

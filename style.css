@@ -612,6 +612,7 @@ section{
         border-radius: 0;
         border: none;
         background: var(--bg-alt);
+        flex-shrink:0;
     }
     .hero-mobile__img img{
         width: 100%;
@@ -623,14 +624,14 @@ section{
     /* row 1 — bigger image, right-aligned, note on its left */
     .hero-mobile__img--main{
         flex: 0 0 60%;
-        height: 34svh;
+        height: 34dvh;
     }
 
     /* row 2 — smaller image, left-aligned, name on its right */
     .hero-mobile__img--small{
         margin-top: 14px;
         flex: 0 0 60%;
-        height: 19svh;
+        height: 19dvh;
     }
     .hero-mobile__sign-name{
         flex: 0 0 20%;
@@ -1430,6 +1431,3 @@ section{
     line-height:1.35;
 }
 
-.hero-mobile__img{
-    flex-shrink: 0;
-}

@@ -65,9 +65,12 @@
 <main>
 
     <!-- ===== Home / Hero =====
-         Editorial sandwich: intro text top, a full-bleed strip of work,
-         headline resolving underneath. Replace the six strip images with
-         real crops from your pieces — square or portrait works best. ===== -->
+         Desktop: editorial sandwich (unchanged) — .hero__top / .hero__strip / .hero__bottom.
+         Mobile: those three are hidden via CSS below 760px, and the
+         .hero-mobile block below is shown instead — a clean, minimal
+         layout matching the reference: big headline, two images as
+         the main focus with real space between them, and Sara's
+         signature + name where "space" sat in the reference image. ===== -->
     <section class="hero" id="home">
 
         <div class="hero__top">
@@ -76,7 +79,7 @@
                 Painting became the language I found before I learned
                 how to explain my emotions. <br>
                 <br>
-                 I work with acrylic, charcoal and mixed media to translate
+                I work with acrylic, charcoal and mixed media to translate
                 memories, emotions and human connection into visual form.
                 Every piece is an invitation to pause, observe and feel.
             </p>
@@ -114,6 +117,56 @@
                 </div>
             </div>
         </div>
+
+        <!-- ===== MOBILE-ONLY HERO — hidden on desktop, shown ≤760px ===== -->
+        <div class="hero-mobile">
+            <p class="hero-mobile__eyebrow">Visual artist — Skopje</p>
+
+            <!-- Signature draws in, then dissolves into the "Virtual Gallery"
+                 headline in the same spot. -->
+            <div class="hero-mobile__headline">
+                <div class="hero-mobile__sig">
+                    <img src="images/signature.svg" alt="Sara signature">
+                </div>
+                <h1 class="hero-mobile__title">Virtual<br><em>Gallery</em></h1>
+            </div>
+
+            <!-- Row 1: one-sentence note on the left, bigger image right-aligned.
+                 Swap images/1.jpg for any other artwork. -->
+            <div class="hero-mobile__row hero-mobile__row--top">
+                <p class="hero-mobile__note"> Painting became the language I found before I learned
+                    how to explain my emotions.</p>
+                <div class="hero-mobile__img hero-mobile__img--main">
+                    <img src="images/1.jpg" alt="Artwork detail — main">
+                </div>
+            </div>
+
+            <!-- Row 2: smaller image left-aligned, name on its right.
+                 Swap images/3.jpg for any other artwork. -->
+            <div class="hero-mobile__row">
+                <div class="hero-mobile__img hero-mobile__img--small">
+                    <img src="images/3.jpg" alt="Artwork detail — secondary">
+                </div>
+                <span class="hero-mobile__sign-name">Sara <br> Andonovska</span>
+            </div>
+            <div class="hero-mobile__meta">
+                <div class="hero__meta-item">
+                    <span class="label" style="color:#C82127">Medium</span>
+                    <span>Acrylic, ink, mixed media</span>
+                </div>
+
+                <div class="hero__meta-item">
+                    <span class="label" style="color:#C82127">Debut</span>
+                    <span>Solo exhibition, 2026 – "Impuls"</span>
+                </div>
+
+                <div class="hero__meta-item">
+                    <span class="label" style="color:#C82127">Currently</span>
+                    <span>Open for collaborations </span>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <!-- ===== About ===== -->

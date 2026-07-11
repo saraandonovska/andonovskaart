@@ -379,29 +379,6 @@ section{
 }
 .hero__line--bottom em{ color: var(--red); }
 
-@media (max-width: 760px){
-    .hero__line--top{
-        font-size: clamp(38px, 11vw, 56px);
-    }
-    .hero__headline{
-        min-height: 90px;
-    }
-    .hero__signature{
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-    .hero__signature img{
-        width: 220px;
-        top: -10px;
-    }
-}
-@media (max-width: 760px){
-    .hero__line--top{
-        font-size: clamp(38px, 11vw, 56px);
-        text-align: right;
-        line-height: 1.05;
-    }
-}
 /* ---------------------------------------------------------
    SIGNATURE INTRO — traced from Sara's own signature, wiped
    in like it's being signed in real time, then handed off to
@@ -521,27 +498,151 @@ section{
     50%{ transform: translateY(4px); }
 }
 
+/* ---------------------------------------------------------
+   MOBILE HERO — the desktop hero (.hero__top / .hero__strip /
+   .hero__bottom) is hidden below 760px and swapped for a
+   dedicated, minimal mobile-only block (.hero-mobile), styled
+   after the reference: big headline up top, two clean images
+   as the main visual focus with real breathing room between
+   them, and the signature + name sitting where "space" sat in
+   the reference — no rounded corners, no borders on the images.
+   Desktop markup and styles above are completely untouched.
+   --------------------------------------------------------- */
+.hero-mobile{ display: none; }
+
 @media (max-width: 760px){
-    .hero{ padding-top: 100px; }
-    .hero__top{
-        grid-template-columns: 1fr;
-        align-items: start;
+    .hero{ padding-top: 92px; }
+
+    /* hide the desktop hero pieces on mobile */
+    .hero__top,
+    .hero__strip,
+    .hero__bottom{ display: none; }
+
+    /* whole block sized to fit one opening screen — distributes
+       eyebrow / headline / two image rows across the viewport
+       height rather than stacking them long-form */
+    .hero-mobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+        min-height: calc(100vh - 68px);
+        padding: 0 var(--gutter) 20px;
     }
-    .hero__top .eyebrow,
-    .hero__intro{ grid-column: 1; }
-    .hero__line--top{
-        text-align: left;
+
+    .hero-mobile__eyebrow{
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--red);
+        margin: 0 0 24px;
     }
-    .hero__headline{
-        grid-column: 1;
-        margin-top: 24px;
+
+    /* ---- headline: signature blends into "Virtual Gallery" ----
+       kept tight against the eyebrow above it — the signature
+       draws in first, then dissolves as the headline fades in
+       on top of the same spot. Sized so "Gallery" spans more
+       than half the screen width. */
+    .hero-mobile__headline{
+        position: relative;
+        min-height: 14vh;
+        margin: 0 0 2.4vh;
     }
-    .hero__signature{ justify-content: flex-start; }
-    .hero__line--bottom{ text-align: left; }
-    .hero__strip{ grid-template-columns: repeat(3, 1fr); }
-    .hero__strip-item:nth-child(3){ border-right: none; }
-    .hero__scroll{ position: static; margin-top: 32px; }
+    .hero-mobile__sig{
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        pointer-events: none;
+        animation: sigFadeOut .6s var(--ease) forwards;
+        animation-delay: 1.7s;
+    }
+    .hero-mobile__sig img{
+        width: 230px;
+        max-width: 72%;
+        opacity: 0;
+        transform: scale(.92);
+        animation: signatureAppear 1.3s ease forwards;
+    }
+    .hero-mobile__title{
+        font-family: var(--font-display);
+        font-weight: 300;
+        font-size: clamp(46px, 15vw, 80px);
+        line-height: 0.98;
+        letter-spacing: -0.01em;
+        margin: 0;
+        opacity: 0;
+        transform: translateY(8px);
+        animation: headlineIn .6s var(--ease) forwards;
+        animation-delay: 1.5s;
+    }
+    .hero-mobile__title em{
+        font-style: italic;
+        font-weight: 500;
+        color: var(--red);
+    }
+
+    /* ---- image rows: each row pairs one image with a bit of text ---- */
+    .hero-mobile__row{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 2.2vh;
+    }
+    .hero-mobile__row:last-child{ margin-bottom: 0; }
+
+    /* row 1 — the note now sits top-aligned, in line with the
+       top edge of the main image, instead of bottom-aligned */
+    .hero-mobile__row--top{
+        align-items: flex-start;
+    }
+
+    .hero-mobile__note{
+        flex: 0 0 34%;
+        margin: 0;
+        font-size: 11.5px;
+        line-height: 1.45;
+        color: var(--ink-soft);
+    }
+
+    .hero-mobile__img{
+        overflow: hidden;
+        border-radius: 0;
+        border: none;
+        background: var(--bg-alt);
+    }
+    .hero-mobile__img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* row 1 — bigger image, right-aligned, note on its left */
+    .hero-mobile__img--main{
+        flex: 0 0 60%;
+        height: 34vh;
+    }
+
+    /* row 2 — smaller image, left-aligned, name on its right */
+    .hero-mobile__img--small{
+        margin-top: 14px;
+        flex: 0 0 60%;
+        height: 19vh;
+    }
+    .hero-mobile__sign-name{
+        flex: 0 0 20%;
+        text-align: right;
+        font-family: var(--font-display);
+        font-style: italic;
+        font-weight: 500;
+        font-size: 24px;
+        color: var(--ink);
+    }
 }
+
 @media(max-width:760px){
 
     .about__grid{
@@ -1261,4 +1362,70 @@ section{
     .flip-card.is-flipped .flip-card__face--front{
         visibility: hidden;
     }
+}
+
+.hero__meta-item,
+.about__facts > div,
+.exhibit-hero__meta .hero__meta-item {
+    perspective: 1000px;
+}
+
+/* ---------------------------------------------------------
+   LABEL REVEAL — flip-in animation for specific label+text
+   pairs. Add class="reveal-label" to the wrapping element
+   (the div/span that holds both the red .label and its text).
+   --------------------------------------------------------- */
+.reveal-label{
+    perspective: 800px;
+}
+
+.reveal-label .label,
+.reveal-label > span:not(.label){
+    display: block;
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-100deg);
+    transition: opacity 0.6s ease-out,
+    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    backface-visibility: hidden;
+}
+
+.reveal-label.is-visible .label,
+.reveal-label.is-visible > span:not(.label){
+    opacity: 1;
+    transform: rotateX(0deg);
+}
+
+/* stagger: text appears slightly after the label above it */
+.reveal-label > span:not(.label){
+    transition-delay: 0.08s;
+}
+
+.hero-mobile__meta{
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin-top:32px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+}
+
+.hero-mobile__meta .hero__meta-item{
+    flex:1;
+    min-width:0;
+}
+
+.hero-mobile__meta .label{
+    font-size:9px;
+    margin-bottom:6px;
+}
+
+.hero-mobile__meta .hero__meta-item span:last-child{
+    display:block;
+    font-size:11px;
+    line-height:1.35;
 }

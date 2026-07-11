@@ -281,7 +281,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 main{ position: relative; z-index: 1; }
 
 section{
-    padding: 100px var(--gutter) 70px;
+    padding: 110px var(--gutter) 70px;
     max-width: var(--container);
     margin: 0 auto;
     position: relative;
@@ -295,7 +295,7 @@ section{
     display:flex;
     align-items: baseline;
     gap: 16px;
-    margin-bottom: 48px;
+    margin-bottom: 18px;
 }
 .section-num{
     font-family: var(--font-mono);
@@ -311,8 +311,8 @@ section{
 .section-intro{
     max-width: 640px;
     color: var(--ink-soft);
-    margin-top: -24px;
-    margin-bottom: 48px;
+    margin-top: 0px;
+    margin-bottom: 40px;
 }
 .section-intro strong{ color: var(--ink); font-weight: 600; }
 
@@ -526,6 +526,7 @@ section{
         flex-direction: column;
         justify-content: center;
         gap: 0;
+        margin-top: 14px;
         min-height: calc(100vh - 68px);
         padding: 0 var(--gutter) 20px;
     }
@@ -580,7 +581,7 @@ section{
     .hero-mobile__title em{
         font-style: italic;
         font-weight: 500;
-        color: var(--red);
+        color: var(--purple);
     }
 
     /* ---- image rows: each row pairs one image with a bit of text ---- */
@@ -613,6 +614,10 @@ section{
         border: none;
         background: var(--bg-alt);
         flex-shrink:0;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: imageReveal .8s var(--ease) forwards;
+
     }
     .hero-mobile__img img{
         width: 100%;
@@ -625,6 +630,7 @@ section{
     .hero-mobile__img--main{
         flex: 0 0 60%;
         height: 34dvh;
+        animation-delay: 0.3s;
     }
 
     /* row 2 — smaller image, left-aligned, name on its right */
@@ -632,15 +638,26 @@ section{
         margin-top: 14px;
         flex: 0 0 60%;
         height: 19dvh;
+        animation-delay: 0.6s;
     }
     .hero-mobile__sign-name{
         flex: 0 0 20%;
-        text-align: right;
+        text-align: left;
         font-family: var(--font-display);
         font-style: italic;
         font-weight: 500;
         font-size: 24px;
         color: var(--ink);
+    }
+}
+@keyframes imageReveal{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -794,7 +811,8 @@ section{
 .exhibition__intro{ max-width: 720px; }
 .exhibition__body{
     color: var(--ink-soft);
-    margin: -28px 0 56px;
+    margin-top: 0px;
+    margin-bottom: 40px;
     max-width: 62ch;
 }
 
@@ -1018,7 +1036,7 @@ section{
    EXHIBITION DETAIL PAGE (exhibition.html) — mini hero + press
    --------------------------------------------------------- */
 .exhibit-hero{
-    padding-top: 168px;
+    padding-top: 128px;
     padding-bottom: 60px;
 }
 .exhibit-hero__title{
@@ -1146,7 +1164,7 @@ section{
     margin:0;
     color: var(--ink-soft);
     font-size: 14.5px;
-    max-width: 58ch;
+    max-width: 100ch;
 }
 
 @media (max-width: 600px){

@@ -629,7 +629,7 @@ section{
     /* row 1 — bigger image, right-aligned, note on its left */
     .hero-mobile__img--main{
         flex: 0 0 60%;
-        height: 34dvh;
+        height: 280px;
         animation-delay: 0.3s;
     }
 
@@ -637,7 +637,7 @@ section{
     .hero-mobile__img--small{
         margin-top: 14px;
         flex: 0 0 60%;
-        height: 19dvh;
+        height: 160px;
         animation-delay: 0.6s;
     }
     .hero-mobile__sign-name{

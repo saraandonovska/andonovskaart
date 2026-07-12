@@ -238,7 +238,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         align-items: baseline;
         gap: 12px;
     }
-    .nav__links a span{
+    .nav__links a .nav__num{
         font-family: var(--font-mono);
         font-size: 11px;
         color: var(--red);
@@ -1258,6 +1258,19 @@ section{
 .contact__social a{ text-decoration:none; }
 .contact__social a:hover{ color: var(--red); }
 
+/* Equal-width nav buttons in the "want to know more" strip —
+   stops short labels like "За мене" from wrapping while longer
+   ones like "Признанија" stay on one line. */
+#contact-lite .contact__social{
+    gap: 12px;
+}
+#contact-lite .contact__social .btn--light{
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
 @media (max-width: 760px){
     .contact__inner{ grid-template-columns: 1fr; }
 }
@@ -1288,19 +1301,19 @@ section{
     opacity: 1;
     transform: translateY(0);
 }
-#navLinks > a:nth-child(2) > span{
+#navLinks > a:nth-child(2) > span:first-child{
+     color: var(--red);
+ }
+#navLinks > a:nth-child(3) > span:first-child {
     color: var(--red);
 }
-#navLinks > a:nth-child(3) > span {
+#navLinks > a:nth-child(4) > span:first-child {
     color: var(--red);
 }
-#navLinks > a:nth-child(4) > span {
+#navLinks > a:nth-child(5) > span:first-child {
     color: var(--red);
 }
-#navLinks > a:nth-child(5) > span {
-    color: var(--red);
-}
-#navLinks > a:nth-child(6) > span {
+#navLinks > a:nth-child(6) > span:first-child {
     color: var(--red);
 }
 /* ---------------------------------------------------------
@@ -1448,4 +1461,56 @@ section{
     font-size:11px;
     line-height:1.35;
 }
+/* =========================================================
+   LANGUAGE SWITCHER — append this block to style.css.
+   Lives inside #navLinks, so it inherits the desktop-bar /
+   mobile-drawer split automatically, same as .nav__social.
+   ========================================================= */
+.lang-switch{
+    display:flex;
+    align-items:center;
+    gap: 6px;
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: 1px solid var(--line);
+}
+.lang-btn{
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    background: none;
+    border: 1px solid transparent;
+    color: var(--ink-soft);
+    padding: 4px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: color .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
+}
+.lang-btn:hover{ color: var(--ink); }
+.lang-btn.active{
+    color: var(--bg);
+    background: var(--red);
+    border-color: var(--red);
+}
 
+@media (max-width: 760px){
+    .lang-switch{
+        margin-left: 0;
+        margin-top: 20px;
+        padding-left: 0;
+        padding-top: 20px;
+        border-left: none;
+        border-top: 1px solid var(--line);
+        width: 100%;
+    }
+    .lang-btn{
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+}
+
+/* On the contact section (dark background), keep the label + link
+   pairs legible if you ever add a lang-switch there too — not used
+   currently, included for completeness. */
+.contact .lang-btn{ color: rgba(250,250,249,0.6); }
+.contact .lang-btn:hover{ color: var(--bg); }

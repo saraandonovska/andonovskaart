@@ -1,3 +1,35 @@
+// ---------- Language switcher ----------
+// Works for both the desktop nav bar and the mobile drawer, since
+// both render from the same #navLinks markup — one .lang-switch
+// inside it is all that's needed. Needs translations.js loaded first.
+(function () {
+    if (typeof translations === 'undefined') return;
+
+    function applyLanguage(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            const dict = translations[lang];
+            if (dict && dict[key] !== undefined) {
+                el.innerHTML = dict[key];
+            }
+        });
+
+        document.documentElement.setAttribute('lang', lang);
+        localStorage.setItem('preferredLang', lang);
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    applyLanguage(savedLang);
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+    });
+})();
+
 // ---------- Mobile nav: side drawer ----------
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
@@ -176,7 +208,7 @@ if (contactForm) {
             "template_7rmwo1l",
             this
         )
-            .then(() => {git
+            .then(() => {
 
                 status.textContent = "Message sent successfully ✓";
                 status.style.color = "#4CAF50";

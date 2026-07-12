@@ -33,12 +33,12 @@
         <span></span><span></span><span></span>
     </button>
     <nav class="nav__links" id="navLinks">
-        <span class="nav__links-label">Menu</span>
-        <a href="#home"><span>01</span>Home</a>
-        <a href="#about"><span>02</span>About</a>
-        <a href="#exhibition"><span>03</span>Exhibition</a>
-        <a href="#honors"><span>04</span>Honors</a>
-        <a href="#contact"><span>05</span>Contact</a>
+        <span class="nav__links-label" data-i18n="nav.menu"; style="color: var(--ink)">Menu</span>
+        <a href="#home"><span class="nav__num">01</span><span data-i18n="nav.home">Home</span></a>
+        <a href="#about"><span class="nav__num">02</span><span data-i18n="nav.about">About</span></a>
+        <a href="#exhibition"><span class="nav__num">03</span><span data-i18n="nav.exhibition">Exhibition</span></a>
+        <a href="#honors"><span class="nav__num">04</span><span data-i18n="nav.honors">Honors</span></a>
+        <a href="#contact"><span class="nav__num">05</span><span data-i18n="nav.contact">Contact</span></a>
 
         <div class="nav__social">
             <a href="https://www.instagram.com/andonovskaart?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" aria-label="Instagram">
@@ -58,6 +58,14 @@
                 </svg>
             </a>
         </div>
+
+        <!-- ===== Language switcher — sits in the same shared markup as
+             the desktop nav bar and the mobile drawer, so one toggle
+             works everywhere. Logic lives in javaS.js. ===== -->
+        <div class="lang-switch">
+            <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+            <button class="lang-btn" data-lang="mk" aria-label="Македонски">МК</button>
+        </div>
     </nav>
 </header>
 <div class="nav__backdrop" id="navBackdrop"></div>
@@ -74,8 +82,8 @@
     <section class="hero" id="home">
 
         <div class="hero__top">
-            <p class="eyebrow">Visual artist — Skopje, North Macedonia</p>
-            <p class="hero__intro">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Visual artist — Skopje, North Macedonia</p>
+            <p class="hero__intro" data-i18n="hero.intro">
                 Painting became the language I found before I learned
                 how to explain my emotions. <br>
                 <br>
@@ -87,7 +95,7 @@
                 <div class="hero__signature">
                     <img src="images/signature.svg" alt="Sara signature">
                 </div>
-                <h1 class="hero__line hero__line--top">Sara<br><em>Andonovska</em><br></h1>
+                <h1 class="hero__line hero__line--top" data-i18n="hero.name">Sara<br><em>Andonovska</em><br></h1>
             </div>
         </div>
 
@@ -104,23 +112,23 @@
             <!-- <h1 class="hero__line hero__line--bottom"><em>The Art of Becoming</em></h1>-->
             <div class="hero__meta">
                 <div class="hero__meta-item">
-                    <span class="label"; style="color: #C82127">Medium</span>
-                    <span>Acrylic, ink, mixed media</span>
+                    <span class="label" style="color: #C82127" data-i18n="hero.meta.medium.label">Medium</span>
+                    <span data-i18n="hero.meta.medium.value">Acrylic, charcoal, mixed media</span>
                 </div>
                 <div class="hero__meta-item">
-                    <span class="label"; style="color: #C82127">Debut</span>
-                    <span>Solo exhibition, 2026 - ,,Impuls''</span>
+                    <span class="label" style="color: #C82127" data-i18n="hero.meta.debut.label">Debut</span>
+                    <span data-i18n="hero.meta.debut.value">Solo exhibition, 2026 - ,,Impuls''</span>
                 </div>
                 <div class="hero__meta-item">
-                    <span class="label"; style="color: #C82127">Currently</span>
-                    <span>Open for collaborations and orders</span>
+                    <span class="label" style="color: #C82127" data-i18n="hero.meta.currently.label">Currently</span>
+                    <span data-i18n="hero.meta.currently.value">Open for collaborations and orders</span>
                 </div>
             </div>
         </div>
 
         <!-- ===== MOBILE-ONLY HERO — hidden on desktop, shown ≤760px ===== -->
         <div class="hero-mobile">
-            <p class="hero-mobile__eyebrow">Visual artist — Skopje</p>
+            <p class="hero-mobile__eyebrow" data-i18n="hero.mobile.eyebrow">Visual artist — Skopje</p>
 
             <!-- Signature draws in, then dissolves into the "Virtual Gallery"
                  headline in the same spot. -->
@@ -128,13 +136,13 @@
                 <div class="hero-mobile__sig">
                     <img src="images/signature.svg" alt="Sara signature">
                 </div>
-                <h1 class="hero-mobile__title">Virtual<br><em>Gallery</em></h1>
+                <h1 class="hero-mobile__title" data-i18n="hero.mobile.title">Virtual<br><em>Gallery</em></h1>
             </div>
 
             <!-- Row 1: one-sentence note on the left, bigger image right-aligned.
                  Swap images/1.jpg for any other artwork. -->
             <div class="hero-mobile__row hero-mobile__row--top">
-                <p class="hero-mobile__note"> Painting became the language I found before I learned
+                <p class="hero-mobile__note" data-i18n="hero.mobile.note"> Painting became the language I found before I learned
                     how to explain my emotions.</p>
                 <div class="hero-mobile__img hero-mobile__img--main">
                     <img src="images/3izl.jpg" alt="Artwork detail — main">
@@ -147,22 +155,22 @@
                 <div class="hero-mobile__img hero-mobile__img--small">
                     <img src="images/11izl.jpg" alt="Artwork detail — secondary">
                 </div>
-                <span class="hero-mobile__sign-name">Sara <br> Andonovska</span>
+                <span class="hero-mobile__sign-name" data-i18n="hero.mobile.name">Sara <br> Andonovska</span>
             </div>
             <div class="hero-mobile__meta">
                 <div class="hero__meta-item">
-                    <span class="label" style="color:#C82127">Medium</span>
-                    <span>Acrylic, ink, mixed media</span>
+                    <span class="label" style="color:#C82127" data-i18n="hero.meta.medium.label">Medium</span>
+                    <span data-i18n="hero.meta.medium.value">Acrylic, ink, mixed media</span>
                 </div>
 
                 <div class="hero__meta-item">
-                    <span class="label" style="color:#C82127">Debut</span>
-                    <span>Solo exhibition, 2026 – "Impuls"</span>
+                    <span class="label" style="color:#C82127" data-i18n="hero.meta.debut.label">Debut</span>
+                    <span data-i18n="hero.meta.debut.value">Solo exhibition, 2026 – "Impuls"</span>
                 </div>
 
                 <div class="hero__meta-item">
-                    <span class="label" style="color:#C82127">Currently</span>
-                    <span>Open for collaborations </span>
+                    <span class="label" style="color:#C82127" data-i18n="hero.meta.currently.label">Currently</span>
+                    <span data-i18n="hero.meta.currently.value">Open for collaborations </span>
                 </div>
             </div>
         </div>
@@ -173,7 +181,7 @@
     <section class="about" id="about">
         <div class="section-head">
             <span class="section-num">01</span>
-            <h2>About Me</h2>
+            <h2 data-i18n="about.title">About Me</h2>
         </div>
 
         <div class="about__grid">
@@ -181,32 +189,31 @@
                 <div class="about__portrait-frame">
                     <img src="images/img1.jpg" alt="Portrait of Sara in the studio">
                 </div>
-                <span class="about__caption">The artist behind the canvas, 2026</span>
+                <span class="about__caption" data-i18n="about.caption">The artist behind the canvas, 2026</span>
             </div>
 
             <div class="about__text">
-                <p class="pull-quote">
+                <p class="pull-quote" data-i18n="about.quote">
                     "Every brushstroke carries a piece of emotion that words could never express,
                     speaking the language my <em>heart</em> cannot. "
-
                 </p>
-                <p>
+                <p data-i18n="about.p1">
                     I'm <span style="color: #584BBF; font-weight: bold">Sara</span> - an artist at heart and a Computer Science and Engineering student at FINKI.
                     While technology teaches me how things work, painting teaches me how they feel.
                 </p>
-                <p>
+                <p data-i18n="about.p2">
                     Alongside my studies, I have followed my passion as a self-taught painter working mostly in acrylic and charcoal, drawn to
                     experiment with mixed media and giving meanings to blank canvases. Since childhood, art has been my way of expressing emotions that words cannot fully describe.
                 </p>
-                <p>
+                <p data-i18n="about.p3">
                     My journey through visual arts, UX/UI design, and web development has shown me that the most powerful ideas are born
                     where logic meets emotion, creating pieces that invites people to pause,
                     feel, and remember.
                 </p>
                 <div class="about__facts">
-                    <div><span class="label"  ; style="color: #C82127">Based in</span> Skopje </div>
-                    <div><span class="label" ; style="color: #C82127">Practice</span> Acrylic · Charcoal · Mixed media</div>
-                    <div><span class="label"  ; style="color: #C82127">Started</span> as soon as I could hold a pencil</div>
+                    <div><span class="label" style="color: #C82127" data-i18n="about.facts.basedin.label">Based in</span> <span data-i18n="about.facts.basedin.value">Skopje</span></div>
+                    <div><span class="label" style="color: #C82127" data-i18n="about.facts.practice.label">Practice</span> <span data-i18n="about.facts.practice.value">Acrylic · Charcoal · Mixed media</span></div>
+                    <div><span class="label" style="color: #C82127" data-i18n="about.facts.started.label">Started</span> <span data-i18n="about.facts.started.value">as soon as I could hold a pencil</span></div>
                 </div>
             </div>
         </div>
@@ -220,14 +227,14 @@
     <section class="exhibition" id="exhibition">
         <div class="section-head">
             <span class="section-num">02</span>
-            <h2>Exhibition</h2>
+            <h2 data-i18n="exhibition.title">Exhibition</h2>
         </div>
 
         <div class="exhibition__intro">
-            <p class="section-intro">
+            <p class="section-intro" data-i18n="exhibition.intro">
                 <strong>"Impuls"</strong> — my first solo exhibition, held 3rd-9th March 2026 in Skopje.
             </p>
-            <p class="exhibition__body">
+            <p class="exhibition__body" data-i18n="exhibition.body">
                 Collection of 10 works created from moments when emotion overcomes routine and inner truth begins to surface.
                 The exhibition explores the quiet yet powerful instant when feelings become impossible to ignore,
                 transforming into color, texture, and form.
@@ -240,25 +247,25 @@
         <div class="atmosphere">
             <figure class="atmosphere__item" data-reveal="left">
                 <img src="images/IMG_1029.JPG" alt="Exhibition opening night, gallery view">
-                <figcaption>The room</figcaption>
+                <figcaption data-i18n="exhibition.atmosphere.room">The room</figcaption>
             </figure>
             <figure class="atmosphere__item" data-reveal="up">
                 <img src="images/2izl.jpg" alt="Visitors reading the wall text beside a painting">
-                <figcaption>The art</figcaption>
+                <figcaption data-i18n="exhibition.atmosphere.art">The art</figcaption>
             </figure>
             <figure class="atmosphere__item" data-reveal="up">
                 <img src="images/3izl.jpg" alt="Close-up detail from the exhibition">
-                <figcaption>Details</figcaption>
+                <figcaption data-i18n="exhibition.atmosphere.details">Details</figcaption>
             </figure>
             <figure class="atmosphere__item" data-reveal="right">
                 <img src="images/5izl.jpg" alt="Wide view of the gallery room">
-                <figcaption>Opening night</figcaption>
+                <figcaption data-i18n="exhibition.atmosphere.opening">Opening night</figcaption>
             </figure>
         </div>
 
         <div class="exhibition__cta" data-reveal="up">
             <a class="btn" href="exhibition.html">
-                <span>View the full exhibition</span>
+                <span data-i18n="exhibition.cta">View the full exhibition</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
             </a>
         </div>
@@ -268,43 +275,43 @@
     <section class="honors" id="honors">
         <div class="section-head">
             <span class="section-num">03</span>
-            <h2>Honors &amp; Awards</h2>
+            <h2 data-i18n="honors.title">Honors &amp; Awards</h2>
         </div>
 
         <ul class="honors-list">
             <li>
-                <span class="honors-year">young age</span>
+                <span class="honors-year" data-i18n="honors.year.young">young age</span>
                 <div>
-                    <h3>National & European Art Recognition</h3>
-                    <p>Recipient of multiple awards in children's and youth art competitions organized by the City of Skopje and the European Union, reflecting a long-standing dedication to visual arts from an early age.</p>
+                    <h3 data-i18n="honors.item1.title">National & European Art Recognition</h3>
+                    <p data-i18n="honors.item1.text">Recipient of multiple awards in children's and youth art competitions organized by the City of Skopje and the European Union, reflecting a long-standing dedication to visual arts from an early age.</p>
                 </div>
             </li>
             <li>
                 <span class="honors-year">2022</span>
                 <div>
-                    <h3>British Embassy Art Competition Winner</h3>
-                    <p>Won first place in an art competition organized by the British Embassy, with the winning painting featured on a public billboard in the center of Skopje.</p>
+                    <h3 data-i18n="honors.item2.title">British Embassy Art Competition Winner</h3>
+                    <p data-i18n="honors.item2.text">Won first place in an art competition organized by the British Embassy, with the winning painting featured on a public billboard in the center of Skopje.</p>
                 </div>
             </li>
             <li>
                 <span class="honors-year">2023</span>
                 <div>
-                    <h3>First Place – Skala Group Exhibition</h3>
-                    <p>Awarded first place in both the Junior and Senior categories at the Skala School Group Exhibition (2023), recognizing artistic excellence across two age divisions.</p>
+                    <h3 data-i18n="honors.item3.title">First Place – Skala Group Exhibition</h3>
+                    <p data-i18n="honors.item3.text">Awarded first place in both the Junior and Senior categories at the Skala School Group Exhibition (2023), recognizing artistic excellence across two age divisions.</p>
                 </div>
             </li>
             <li>
                 <span class="honors-year">2023/24</span>
                 <div>
-                    <h3>UX/UI+ Academy </h3>
-                    <p>Received a scholarship to the UX/UI+ Academy (2023–2024) after earning first place at the Skala Group Exhibition, expanding my creative practice into digital design.</p>
+                    <h3 data-i18n="honors.item4.title">UX/UI+ Academy </h3>
+                    <p data-i18n="honors.item4.text">Received a scholarship to the UX/UI+ Academy (2023–2024) after earning first place at the Skala Group Exhibition, expanding my creative practice into digital design.</p>
                 </div>
             </li>
             <li>
                 <span class="honors-year">2023</span>
                 <div>
-                    <h3>Young Art Group Exhibition</h3>
-                    <p>Selected to participate in the <em>Young Art</em> group exhibition organized by the Agency of Youth and Sports (December 2023), showcasing emerging young artists.</p>
+                    <h3 data-i18n="honors.item5.title">Young Art Group Exhibition</h3>
+                    <p data-i18n="honors.item5.text">Selected to participate in the <em>Young Art</em> group exhibition organized by the Agency of Youth and Sports (December 2023), showcasing emerging young artists.</p>
                 </div>
             </li>
         </ul>
@@ -314,27 +321,27 @@
     <section class="contact" id="contact">
         <div class="contact__inner">
             <div class="contact__left">
-                <p class="eyebrow">Get in touch</p>
-                <h2 class="contact__title">Let's make<br><em>the walls feel alive.</em></h2>
-                <p class="contact__sub">Commissions, exhibitions, collaborations — open to all of it.</p>
+                <p class="eyebrow" data-i18n="contact.eyebrow">Get in touch</p>
+                <h2 class="contact__title" data-i18n="contact.title">Let's make<br><em>the walls feel alive.</em></h2>
+                <p class="contact__sub" data-i18n="contact.sub">Commissions, exhibitions, collaborations — open to all of it.</p>
             </div>
 
             <div class="contact__right">
                 <form class="contact__form" id="contactForm">
                     <label>
-                        <span class="label">Name</span>
+                        <span class="label" data-i18n="contact.form.name">Name</span>
                         <input type="text" name="from_name" required>
                     </label>
                     <label>
-                        <span class="label">Email</span>
+                        <span class="label" data-i18n="contact.form.email">Email</span>
                         <input type="email" name="from_email" required>
                     </label>
                     <label>
-                        <span class="label">Message</span>
+                        <span class="label" data-i18n="contact.form.message">Message</span>
                         <textarea name="message" rows="4" required></textarea>
                     </label>
-                    <button type="submit">Send message</button>
-                    <p class="form-status"; style="font-family: var(--font-mono); font-size: 12px;"></p>
+                    <button type="submit" data-i18n="contact.form.submit">Send message</button>
+                    <p class="form-status" style="font-family: var(--font-mono); font-size: 12px;"></p>
                 </form>
 
                 <div class="contact__social">
@@ -353,6 +360,7 @@
     <span> @andonovskaart // andonovskaart@gmail.com </span>
 </footer>
 
+<script src="translations.js"></script>
 <script src="javaS.js"></script>
 </body>
 </html>
